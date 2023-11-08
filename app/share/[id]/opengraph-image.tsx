@@ -7,8 +7,8 @@ export const runtime = 'edge'
 export const alt = 'AI Chatbot'
 
 export const size = {
-  width: 1200,
-  height: 630,
+  width: 600,
+  height: 315,
 }
 
 export const contentType = 'image/jpeg'
