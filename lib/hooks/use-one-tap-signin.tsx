@@ -38,10 +38,13 @@ const useOneTapSignin = (
 
                     google.accounts.id.prompt((notification: any) => {
                         if (notification.isNotDisplayed()) {
+
                             console.log(
                                 "getNotDisplayedReason ::",
                                 notification.getNotDisplayedReason()
                             );
+                            document.cookie = `g_state=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT`;
+                            google.accounts.id.prompt();
                         } else if (notification.isSkippedMoment()) {
                             console.log(
                                 "getSkippedReason  ::",

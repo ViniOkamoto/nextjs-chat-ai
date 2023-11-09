@@ -8,7 +8,7 @@ export const externalUrls = {
 
 export const authProviders: AuthProvider[] = [
     {
-        id: 'gitHub',
+        id: 'github',
         text: 'Sign in with GitHub',
         icon: IconGitHub
     },

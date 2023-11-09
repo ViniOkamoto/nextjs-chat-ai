@@ -16,12 +16,12 @@ declare module 'next-auth' {
 
 
 export const authOptions: NextAuthConfig = {
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.AUTH_SECRET as string,
   pages: {
     signIn: '/sign-in',
   },
+  debug: true,
   providers: [
-
     GithubProvider({
       id: authProviders[0].id,
       clientId: process.env.AUTH_GITHUB_ID as string,
