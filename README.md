@@ -1,5 +1,5 @@
 <a href="https://chat.vercel.ai/">
-  <img alt="Next.js 13 and app template Router-ready AI chatbot." src="https://chat.vercel.ai/opengraph-image.png">
+  <img alt="Next.js 14 and app template Router-ready AI chatbot." src="https://blackbox-challenge-oa56.onrender.com/opengraph-image.png">
   <h1 align="center">Next.js AI Chatbot</h1>
 </a>
 
@@ -8,66 +8,77 @@
 </p>
 
 <p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#model-providers"><strong>Model Providers</strong></a> ·
+  <a href="#challenges"><strong>Challenges</strong></a> ·
+  <a href="#solutions"><strong>Solutions</strong></a> ·
   <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
   <a href="#running-locally"><strong>Running locally</strong></a> ·
-  <a href="#authors"><strong>Authors</strong></a>
+  <a href="#author"><strong>Author</strong></a>
 </p>
 <br/>
+![Next.js 14 and app template Router-ready AI chatbot.](https://blackbox-challenge-oa56.onrender.com/opengraph-image.png)
 
-## Features
+## Introduction
 
-- [Next.js](https://nextjs.org) App Router
-- React Server Components (RSCs), Suspense, and Server Actions
-- [Vercel AI SDK](https://sdk.vercel.ai/docs) for streaming chat UI
-- Support for OpenAI (default), Anthropic, Hugging Face, or custom AI chat models and/or LangChain
-- Edge runtime-ready
-- [shadcn/ui](https://ui.shadcn.com)
-  - Styling with [Tailwind CSS](https://tailwindcss.com)
-  - [Radix UI](https://radix-ui.com) for headless component primitives
-  - Icons from [Phosphor Icons](https://phosphoricons.com)
-- Chat History, rate limiting, and session storage with [Vercel KV](https://vercel.com/storage/kv)
-- [NextAuth.js](https://github.com/nextauthjs/next-auth) for authentication
-
-## Model Providers
-
-This template ships with OpenAI `gpt-3.5-turbo` as the default. However, thanks to the [Vercel AI SDK](https://sdk.vercel.ai/docs), you can switch LLM providers to [Anthropic](https://anthropic.com), [Hugging Face](https://huggingface.co), or using [LangChain](https://js.langchain.com) with just a few lines of code.
-
-## Deploy Your Own
-
-You can deploy your own version of the Next.js AI Chatbot to Vercel with one click:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=Next.js+Chat&demo-description=A+full-featured%2C+hackable+Next.js+AI+chatbot+built+by+Vercel+Labs&demo-url=https%3A%2F%2Fchat.vercel.ai%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4aVPvWuTmBvzM5cEdRdqeW%2F4234f9baf160f68ffb385a43c3527645%2FCleanShot_2023-06-16_at_17.09.21.png&project-name=Next.js+Chat&repository-name=nextjs-chat&repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-chatbot&from=templates&skippable-integrations=1&env=OPENAI_API_KEY%2CAUTH_GITHUB_ID%2CAUTH_GITHUB_SECRET%2CAUTH_SECRET&envDescription=How+to+get+these+env+vars&envLink=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-chatbot%2Fblob%2Fmain%2F.env.example&teamCreateStatus=hidden&stores=[{"type":"kv"}])
-
-## Creating a KV Database Instance
-
-Follow the steps outlined in the [quick start guide](https://vercel.com/docs/storage/vercel-kv/quickstart#create-a-kv-database) provided by Vercel. This guide will assist you in creating and configuring your KV database instance on Vercel, enabling your application to interact with it.
-
-Remember to update your environment variables (`KV_URL`, `KV_REST_API_URL`, `KV_REST_API_TOKEN`, `KV_REST_API_READ_ONLY_TOKEN`) in the `.env` file with the appropriate credentials provided during the KV database setup.
+Welcome to the Black Box Challenge! The goal of this project is to clone Vercel's Chat AI [https://chat.vercel.ai/](https://chat.vercel.ai/) and enhance it by integrating Google on Tap authentication. For more details, visit [Black Box Challenge](https://blackbox-challenge-oa56.onrender.com).
 
 
-## Running locally
+## Challenges
 
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/concepts/projects/environment-variables) for this, but a `.env` file is all that is necessary.
+In this section, I'll discuss the challenges and technical barriers faced during the development process, categorized by difficulty.
 
-> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various OpenAI and authentication provider accounts.
+### 1. Project Clone Inconsistency
+#### 1.1 Project Version
+The project faced inconsistencies due to outdated packages and manual version locks, leading to failures. Relevant GitHub issues:
+- [Issue 168](https://github.com/vercel-labs/ai-chatbot/issues/168)
+- [Issue 154](https://github.com/vercel-labs/ai-chatbot/issues/154)
+
+#### 1.2 Environment Variables
+After cloning the project, some essential environment variables were missing.
+
+### 2. Google On Tap
+The challenge here was to find an optimal implementation strategy for Google on Tap authentication.
+
+## Solutions
+
+In this section, I'll outline the solutions implemented to address the challenges mentioned above.
+
+### 1. Project Clone Inconsistency
+To resolve the inconsistencies, the project underwent updates to ensure compatibility with the desired functionality, as demonstrated in the [example](https://chat.vercel.ai/).
+
+#### 1.1 Packages Upgrade
+Key updates included upgrading NextJS to version 14, updating the next-auth version to V5, and addressing other package updates such as "ai," "class-variance-authority," and "openai-edge."
+
+#### 1.2 Environment Variables
+After referencing auth-js documentation and Open AI documentation, missing environment variables (e.g., AUTH_SECRET and AUHT_URL) were added.
+
+### 2. Google On Tap
+For the Google on Tap authentication feature, three implementation approaches were explored.
+
+#### 2.1 Raw Implementation
+A straightforward approach based on [Google Docs](https://developers.google.com/identity/gsi/web/reference/js-reference?hl=pt-br#IdConfiguration).
+
+#### 2.2 Google for JavaScript Implementation
+Utilizing the provided JavaScript script for web implementation, detailed [here](https://developers.google.com/identity/gsi/web/reference/js-reference?hl=pt-br#IdConfiguration).
+
+#### 2.3 NPM Package
+Considering a third-party library, [@react-oauth/google], ultimately opting for the 2.2 implementation for comprehensive documentation and avoiding unnecessary NPM packages.
+
+## Running Locally
+
+To run the Next.js AI Chatbot locally, follow these steps:
 
 1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
+2. Link the local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
 3. Download your environment variables: `vercel env pull`
 
 ```bash
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
+The app template should now be accessible at localhost:3000.
 
-Your app template should now be running on [localhost:3000](http://localhost:3000/).
+## Author
 
-## Authors
+This challenge was created by Vinicius Okamoto
 
-This library is created by [Vercel](https://vercel.com) and [Next.js](https://nextjs.org) team members, with contributions from:
-
-- Jared Palmer ([@jaredpalmer](https://twitter.com/jaredpalmer)) - [Vercel](https://vercel.com)
-- Shu Ding ([@shuding\_](https://twitter.com/shuding_)) - [Vercel](https://vercel.com)
-- shadcn ([@shadcn](https://twitter.com/shadcn)) - [Vercel](https://vercel.com)
+- Vinicius Okamoto ([@linkedin](https://www.linkedin.com/in/viniciusokamoto/))
