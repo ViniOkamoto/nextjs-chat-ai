@@ -1,4 +1,4 @@
-import { auth } from './auth';
+import { auth } from './app/api/auth/[...nextauth]/_auth-options';
 
 
 export const middleware = auth

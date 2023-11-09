@@ -88,7 +88,8 @@ function IconNextChat({
   )
 }
 
-function IconOpenAI({ className, ...props }: React.ComponentProps<'svg'>) {
+interface IconProps extends React.HTMLAttributes<SVGSVGElement> { }
+function IconOpenAI({ className, ...props }: IconProps) {
   return (
     <svg
       fill="currentColor"
@@ -137,6 +138,28 @@ function IconGitHub({ className, ...props }: React.ComponentProps<'svg'>) {
   )
 }
 
+function IconGoogle({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className={cn('h-4 w-4', className)}
+      {...props}>
+      <path d="M23.3175 9.83706C23.4574 10.6425 23.5272 11.4586 23.526 12.2761C23.526 15.9271 22.221 19.0141 19.95 21.1036H19.953C17.967 22.9381 15.237 24.0001 12 24.0001C8.8174 24.0001 5.76516 22.7358 3.51472 20.4853C1.26428 18.2349 0 15.1827 0 12.0001C0 8.81746 1.26428 5.76521 3.51472 3.51478C5.76516 1.26434 8.8174 5.9408e-05 12 5.9408e-05C14.9789 -0.0348281 17.8558 1.08431 20.028 3.12306L16.602 6.54906C15.3636 5.36852 13.7107 4.72205 12 4.74906C8.8695 4.74906 6.21 6.86106 5.262 9.70506C4.75936 11.1953 4.75936 12.8093 5.262 14.2996H5.2665C6.219 17.1391 8.874 19.2511 12.0045 19.2511C13.6215 19.2511 15.0105 18.8371 16.0875 18.1051H16.083C16.7084 17.6908 17.2433 17.1541 17.6555 16.5273C18.0678 15.9006 18.3487 15.1969 18.4815 14.4586H12V9.83856L23.3175 9.83706Z" />
+    </svg>
+
+
+  )
+}
+
+function IconLinkedin({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg role="img" viewBox="0 0 24 24" fill="currentColor"
+      className={cn('h-4 w-4', className)}
+      {...props}>
+      <path d="M4.98292 7.19631C6.19132 7.19631 7.17092 6.21671 7.17092 5.00831C7.17092 3.79991 6.19132 2.82031 4.98292 2.82031C3.77452 2.82031 2.79492 3.79991 2.79492 5.00831C2.79492 6.21671 3.77452 7.19631 4.98292 7.19631Z" />
+      <path d="M9.23673 8.85469V20.9937H13.0057V14.9907C13.0057 13.4067 13.3037 11.8727 15.2677 11.8727C17.2047 11.8727 17.2287 13.6837 17.2287 15.0907V20.9947H20.9997V14.3377C20.9997 11.0677 20.2957 8.55469 16.4737 8.55469C14.6387 8.55469 13.4087 9.56169 12.9057 10.5147H12.8547V8.85469H9.23673ZM3.09473 8.85469H6.86973V20.9937H3.09473V8.85469Z" />
+    </svg>
+
+  )
+}
 function IconSeparator({ className, ...props }: React.ComponentProps<'svg'>) {
   return (
     <svg
@@ -503,5 +526,7 @@ export {
   IconShare,
   IconUsers,
   IconExternalLink,
-  IconChevronUpDown
+  IconChevronUpDown,
+  IconLinkedin,
+  IconGoogle,
 }

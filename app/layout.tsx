@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { Providers } from '@/components/providers'
 import { Header } from '@/components/header'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: {
@@ -33,7 +34,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head >
+        <Script src="https://accounts.google.com/gsi/client" async defer />
+      </head>
       <body
         className={cn(
           'font-sans antialiased',
@@ -49,7 +52,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <main className="flex flex-1 flex-col bg-muted/50">{children}</main>
           </div>
           <TailwindIndicator />
+
         </Providers>
+
       </body>
     </html>
   )
