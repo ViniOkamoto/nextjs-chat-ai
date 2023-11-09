@@ -21,12 +21,14 @@ const useOneTapSignin = (
                 const { google } = window as unknown as any;
                 if (google) {
                     google.accounts.id.initialize({
+                        auto_select: true,
                         client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
                         callback: async (response: any) => {
                             setIsLoading(true);
                             await signIn("googleonetap", {
                                 credential: response.credential,
                                 redirect: true,
+                                callbackUrl: options?.callbackUrl,
                                 ...options,
                             },);
                             setIsLoading(false);
