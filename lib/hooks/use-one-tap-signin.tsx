@@ -3,6 +3,7 @@ import { useSession, signIn, SignInOptions } from "next-auth/react";
 
 interface OneTapSigninOptions {
     parentContainerId?: string;
+
 }
 
 const useOneTapSignin = (
@@ -26,7 +27,6 @@ const useOneTapSignin = (
                                 credential: response.credential,
                                 redirect: true,
                                 ...options,
-                                callbackUrl: '/',
                             },);
                             setIsLoading(false);
                         },
