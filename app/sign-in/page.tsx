@@ -12,21 +12,25 @@ interface SignInPageProps {
 }
 export default async function SignInPage({ searchParams }: SignInPageProps) {
   const { callbackUrl } = searchParams
+  let callbackUrlString = callbackUrl as string
+  if (!callbackUrlString) {
+    callbackUrlString = '/'
+  }
   const session = await auth()
   if (session?.user) {
     redirect('/')
   }
-  const length = authProviders
+
   return (
     <div className="relative flex h-[calc(100vh-theme(spacing.16))] items-center justify-center py-10">
-      <OneTapComponent />
+      <OneTapComponent callbackUrl={callbackUrlString} />
       <div className='flex flex-col gap-8'>
 
         {authProviders.map((provider, index) => (
           <LoginButton
             key={provider.id}
             provider={provider}
-            callbackUrl={callbackUrl as string}
+            callbackUrl={callbackUrlString}
           />
         ))}
       </div>
