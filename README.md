@@ -1,7 +1,8 @@
-<a href="https://chat.vercel.ai/">
-  <img alt="Next.js 14 and app template Router-ready AI chatbot." src="https://blackbox-challenge-oa56.onrender.com/opengraph-image.png">
+<a href="https://blackbox-challenge-oa56.onrender.com">
+  <img alt="Next.js 14 and app template Router-ready AI chatbot." src="https://chat.vercel.ai/opengraph-image.png">
   <h1 align="center">Next.js AI Chatbot</h1>
 </a>
+
 
 <p align="center">
   An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Vercel KV.
@@ -10,12 +11,10 @@
 <p align="center">
   <a href="#challenges"><strong>Challenges</strong></a> ·
   <a href="#solutions"><strong>Solutions</strong></a> ·
-  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
   <a href="#running-locally"><strong>Running locally</strong></a> ·
   <a href="#author"><strong>Author</strong></a>
 </p>
 <br/>
-![Next.js 14 and app template Router-ready AI chatbot.](https://blackbox-challenge-oa56.onrender.com/opengraph-image.png)
 
 ## Introduction
 
