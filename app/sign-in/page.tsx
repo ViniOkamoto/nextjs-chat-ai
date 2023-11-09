@@ -3,7 +3,6 @@ import { LoginButton } from '@/components/login-button'
 import OneTapComponent from '@/components/one-tap-component'
 import { authProviders } from '@/lib/contants'
 import { redirect } from 'next/navigation'
-import { Suspense } from 'react'
 
 
 
@@ -25,7 +24,7 @@ export default async function SignInPage({ searchParams }: SignInPageProps) {
     <div className="relative flex h-[calc(100vh-theme(spacing.16))] items-center justify-center py-10">
       <OneTapComponent callbackUrl={callbackUrlString} />
       <div className='flex flex-col gap-8'>
-        {authProviders.map((provider, index) => (
+        {authProviders.map((provider) => (
           <LoginButton
             key={provider.id}
             provider={provider}

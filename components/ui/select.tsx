@@ -5,7 +5,6 @@ import * as SelectPrimitive from '@radix-ui/react-select'
 
 import { cn } from '@/lib/utils'
 import {
-  IconArrowDown,
   IconCheck,
   IconChevronUpDown
 } from '@/components/ui/icons'
@@ -55,7 +54,7 @@ const SelectContent = React.forwardRef<
         className={cn(
           'p-1',
           position === 'popper' &&
-            'h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]'
+          'h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]'
         )}
       >
         {children}

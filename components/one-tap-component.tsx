@@ -1,15 +1,13 @@
 "use client";
 
 import useOneTapSignin from '@/lib/hooks/use-one-tap-signin';
-import { useEffect } from 'react';
-import { auth } from '@/app/api/auth/[...nextauth]/_auth-options';
 
 
 interface OneTapComponentProps {
     callbackUrl?: string
 }
 const OneTapComponent = ({ callbackUrl = '/' }: OneTapComponentProps) => {
-    const { isLoading: oneTapIsLoading } = useOneTapSignin({
+    useOneTapSignin({
         parentContainerId: "oneTap",
         callbackUrl,
     });

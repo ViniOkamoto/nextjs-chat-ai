@@ -1,6 +1,5 @@
 // app/api/auth/[...nextauth]/authorize.ts
 
-import { OAuth2Client } from 'google-auth-library';
 import { User } from "next-auth";
 
 
@@ -15,7 +14,7 @@ export const googleOnTapAuthorize = async (credentials:Partial<Record<"credentia
   .then(data => data.data)
 
 
-  const { email, sub, given_name, family_name, email_verified, picture: image } = payload;
+  const { email, sub, given_name, family_name, picture: image } = payload;
   if (!email) {
     throw new Error("Email not available");
   }

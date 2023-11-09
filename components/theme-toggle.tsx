@@ -8,6 +8,7 @@ import { IconMoon, IconSun } from '@/components/ui/icons'
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, startTransition] = React.useTransition()
 
   return (

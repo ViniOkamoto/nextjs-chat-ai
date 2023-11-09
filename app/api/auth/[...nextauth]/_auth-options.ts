@@ -51,7 +51,7 @@ export const authOptions: NextAuthConfig = {
       }
       return token
     },
-    async session({ session, user, token }) {
+    async session({ session, token }) {
 
         if(token) {
           session.user.id = token.sub as string
@@ -60,7 +60,7 @@ export const authOptions: NextAuthConfig = {
         return session
     },
 
-    async authorized({ request, auth }) {
+    async authorized({ auth }) {
 
       return !!auth;
     },

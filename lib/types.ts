@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { type Message } from 'ai'
 
 export interface Chat extends Record<string, any> {

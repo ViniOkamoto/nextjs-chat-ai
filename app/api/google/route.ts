@@ -1,7 +1,7 @@
 import { OAuth2Client } from 'google-auth-library';
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest, res: NextResponse) {
+export async function GET(request: NextRequest) {
     const {searchParams} = new URL(request.url);
     const clientId = (searchParams.get('clientId') || '') as string ;
     const code = (searchParams.get('code') || '') as string;

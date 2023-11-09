@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { useState } from "react";
 import { useSession, signIn, SignInOptions } from "next-auth/react";
-import { useGoogleOneTapLogin } from '@react-oauth/google';
 
 interface OneTapSigninOptions {
     parentContainerId?: string;
