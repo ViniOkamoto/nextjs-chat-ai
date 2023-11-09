@@ -66,9 +66,8 @@ Considering a third-party library, [@react-oauth/google], ultimately opting for 
 
 To run the Next.js AI Chatbot locally, follow these steps:
 
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link the local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
+1. Configure the environment variables by creating a `.env.local` and copying the variables from `.env.example`
+2. Run the code below
 
 ```bash
 npm install
